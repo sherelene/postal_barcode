@@ -11,7 +11,7 @@ def remove_hyphen(zip_code):
 
 # function to create the checksum of zip code
 def checksum(zip_code):
-    # Loop through zip_code and stores as a list
+    # Loops through zip_code as a string and stores as a int list
     zip_list = [int(num) for num in str(zip_code)]
     # Calculates the checksum
     check_digit = 10 - sum(zip_list) % 10
@@ -32,5 +32,5 @@ def main():
     # call function to add checksum as last digit
     zip_code = checksum(zip_code)
 
-    # calls function to start drawing the barcode
+    # calls function imported from PrintBarcode to start drawing the barcode
     zip_encoding(zip_code)
